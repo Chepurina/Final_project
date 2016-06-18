@@ -1,0 +1,988 @@
+@import "_reset.scss", "_fonts.scss", "_mixins.scss";
+
+$color-main-txt: #ffffff;
+$color-txt: #333333;
+$color-footer-txt:#ff4e50;
+$main-font: "montserratbold", Arial, sans-serif;
+$sub-font: "robotolight", Arial, sans-serif;
+
+@include respond-to(mobile) { 
+/*Header*/
+	header {
+		@include wrapper(320px, 520px);
+		.iner {
+			max-width: 320;
+			margin: 0 auto;
+			.h__menu{
+				&__logo{
+					@include position(absolute, 174px, 72px);
+					width: 50px;
+					font-size: 20px;
+					line-height: 20px;
+					letter-spacing: 0.7px;
+				}
+				&__link{
+					@include position(absolute, 30px, 82px);
+					font-size: 14px;
+					&:hover{
+						color: $color-footer-txt;
+						cursor:pointer;
+					}
+					&--block{
+						@include position(absolute, 19px, 144px);
+						border: 2px solid $color-main-txt;
+						border-radius: 20px 20px;
+						padding: 10px 17px 8px 17px;
+						&:hover{
+							color: $color-footer-txt;
+							cursor:pointer;
+						}
+					}
+				}
+			}
+			.h__txt{
+				@include position(relative, 224px, 12px);
+				text-align: center;
+				h1 {
+					@include position2(relative,0px, 6px);
+					font-size: 30px;
+					font-family: $main-font;
+					line-height: 35px;
+					font-size: 30px;
+					letter-spacing: 1px;
+					width: 295px;
+				}
+				p {
+					margin-top: 11px;
+					margin-left: 36px;
+					line-height: 20px;
+					width: 223px;
+					font-size: 18px;
+					font-family: $sub-font;
+				}
+				a {
+					@include position(absolute, 139px, 7px);
+					font-size: 12px;
+					border: 1px solid $color-footer-txt;
+					border-radius: 20px 20px;
+					width: 241px;
+					padding: 12px 19px 13px 19px;
+					background: $color-footer-txt;
+					&:hover{
+						box-shadow: 10px 7px 23px 1px rgba(82,79,82,1);
+						cursor:pointer;
+					}
+				}
+			}
+		}
+	}
+/*sliders*/	
+	.sliders{
+		.inner {
+			&__title{
+				@include position2(relative, 37px, 14px);
+				font-size: 22px;
+				font-weight: 600;
+				margin-bottom: 15px;
+				font-family: $main-font;
+			}
+			&__step{
+				@include position2(relative, 9px, 1px);
+				margin-bottom: 8px;
+				width: 100%;
+				width: 804px;
+				margin: 0 auto;
+				&__pic{
+					width: 300px;
+					height: 240px;
+					border: 1px transparent solid;
+					margin: auto;
+					position: relative;
+					overflow: hidden;
+					border-radius: 5px 5px;
+					&__item--1, &__item--2{
+						display: inline-block;
+						width: 100%;
+						position: absolute;
+						transition: none;
+						right: 0;
+						opacity: 1;
+					}
+					img {
+						border-radius: 4px 4px;
+						width: 300px;
+						height: 240px;
+					}
+				}
+				&__txt{
+					@include position(absolute, 279px, 155px);
+					display:block;
+					a{
+						@include position(absolute, 100px, 20px);
+						border: 1px solid #ff4e50;
+						border-radius: 12px 12px;
+						width: 69px;
+						color: $color-main-txt;
+						font-size: 10px;
+						letter-spacing: 1px;
+						width: 70px;
+						line-height: 18px;
+						background: $color-footer-txt;
+						font-family: $main-font;
+					}
+					&--1{
+						@include position(absolute, -32px, 1px);
+					}
+					&--2{
+						@include position(absolute, -2px, 0px);
+						p{
+							@include position(absolute, 176px, 20px);
+						}
+					}
+					&--3{
+						@include position(absolute, -32px, 0px);
+					}
+					h2{
+						@include position(absolute, 130px, 20px);
+						margin-top: 7px;
+						margin-bottom: 22px;
+						font-size: 24px;
+						line-height: 26px;
+						color: $color-main-txt;
+						font-weight: 600;
+						width: 209px;
+						text-align: left;
+						font-family: $main-font;
+					}
+					p{
+						@include position(absolute, 206px, 19px);
+						font-size: 14px;
+						color: #cccccc;
+						text-align: left;
+						font-family: $sub-font;
+					}
+				}
+				&__button--1--left, &__button--2--left, &__button--3--left{
+					@include position(absolute, 43px, 22px);
+					z-index:2;
+					cursor:pointer;
+					opacity:0;
+				}
+				&__button--1--right, &__button--2--right, &__button--3--right{
+					@include position(absolute, 43px, 185px);
+					z-index:1;
+					cursor:pointer;
+					opacity:0;
+				}
+				.image1-left, .image2-left, .image3-left {
+					@include position(absolute, 43px, 22px);
+					z-index:1;
+					cursor:pointer;
+					opacity:0;
+				}
+				.image1-right, .image2-right, .image3-right {
+					@include position(absolute, 43px, 185px);
+					z-index:1;
+					cursor:pointer;
+					opacity:0;
+				}
+			}
+		}
+	}
+/*partners*/	
+	.partners {
+		clear:both;
+		.inner {
+			&__title {
+				@include position2(relative, 35px, 26px);
+				font-size: 21px;
+				font-weight: 600;
+				margin-bottom: 15px;
+				width: 278px;
+				letter-spacing:1.3px;
+				line-height: 25px;
+				font-family: $main-font;
+			}
+			&__block {
+				float: left;
+				width: 100%;
+				margin-left: 7px;
+				&__pic {
+					clear: both;
+					position:relative;
+					display: block;
+					img {
+						position:relative;
+					}
+					a {
+						text-align: left;
+						display: block;
+						height: 43px;
+						width: 41px;
+						position: absolute;
+					}
+					&__sprite1, &__sprite2, &__sprite3, &__sprite4{
+						float: left;
+						display: block;
+					}
+					&__sprite1 {
+						@include position2(relative, -41px, 177px);
+						background: url("../img/sprites.png") 0px 0px; 
+						&:hover {
+							background: url("../img/sprites.png")0px -42px;
+						}
+					}
+					&__sprite2 {
+						@include position2(relative, -39px, 176px);
+						background: url("../img/sprites.png") -40px 0px; 
+						&:hover {
+							background: url("../img/sprites.png")-40px -42px;
+						}
+					}
+					&__sprite3 {
+						@include position2(relative, -39px, 175px);
+						background: url("../img/sprites.png") -82px 0px; 
+						&:hover {
+							background: url("../img/sprites.png")-82px -42px;
+						}
+					}
+					&__sprite4 {
+						@include position2(relative, -41px, 174px);
+						background: url("../img/sprites.png") -122px 0px; 
+						&:hover {
+							background: url("../img/sprites.png")-122px -42px;
+						}
+					}
+				}
+				&__txt {
+					@include position2(relative, -8px, 52px);
+					width: 195px;
+					overflow: hidden;
+					margin: 0 auto;
+					margin-bottom: 31px;
+					h2 {
+						margin-top: 25px;
+						font-size: 14px;
+						font-weight: 600;
+						font-family: $main-font;
+					}
+					p {
+						margin-top: 15px;
+						font-size: 14px;
+						font-family: $sub-font;
+						color:#8c8c8c;
+					}
+					&--2 {
+						@include position2(relative, -7px, 53px);
+						width: 196px;
+						margin-bottom: 35px;
+					}
+					&--3 {
+						@include position2(relative, -7px, 45px);
+						width: 210px;
+						margin-bottom: 31px;
+					}
+				}
+			}
+			&__button {
+				clear: both;
+				@include position2(relative, 52px, 36px);
+				a {
+					clear:both;
+					border: 2px solid #ff4e50;
+					border-radius: 20px 20px;
+					padding: 10px 77px 10px 66px;
+					line-height: 40px;
+					margin-left: 14px;
+					color: #ff4e50;
+					font-weight:600;
+					font-size: 14px;
+					text-decoration: none;
+					text-align: center;
+					font-family: $main-font;
+					&:hover {
+						color: $color-main-txt;
+						background:$color-footer-txt;
+					}
+				}
+			}
+		}
+	}
+/*Gallery*/	
+.inner {	
+	.gallery {
+		width: 100%;
+		height: 965px;
+		position: relative;
+		overflow: hidden;
+		background-color: #fff;
+		box-sizing: border-box;
+		&__title{
+			font-size: 21px;
+			font-weight: 600;
+			margin-bottom: 10px;
+			width: 283px;
+			text-align: center;
+			margin-left: 23px;
+			line-height: 22px;
+			letter-spacing: 1px;
+			font-family: $main-font;
+		}
+		&:after {
+			 visibility: hidden;
+		display: block;
+		content: "";
+		clear: both;
+		height: 0; 
+		}
+		.grid {
+			float: left;
+			width: 320px;
+			margin: 0px auto;
+			div {
+				margin: 10px;
+				width: 300px;
+				height: 120px;
+				border-radius: 5px;
+				box-sizing: border-box;
+				background-size: auto 300px;
+				background-size: cover;
+				background-position: center;
+				position: relative;
+				font: 18px $main-font;
+				text-align: center;
+				line-height: 120px;
+				color: #fff; 
+				&:after {
+					@include position(absolute, 0, 0);
+					content: '';
+					width: 100%;
+					height: 100%;
+					border-radius: 5px;
+					z-index: 9;
+				}
+				&:hover:after {
+					-webkit-transition: all 0.5s ease-out;
+					-moz-transition: all 0.5s ease-out;
+					-o-transition: all 0.5s ease-out;
+					transition: all 0.5s ease-out;
+					background: rgba(241, 232, 232, 0.4);
+				}
+			}
+		}
+		
+	}
+	form {
+		&__title{
+			@include position2(relative, 37px, 22px);
+			font-size: 21px;
+			font-weight: 600;
+			margin-bottom: 17px;
+			width: 283px;
+			text-align: center;
+			margin-left: 22px;
+			letter-spacing: 1px;
+			font-family: $main-font;
+		}
+		p {	
+			@include position2(relative, 19px, 14px);
+			font-size: 18px;
+			margin-bottom: 17px;
+			font-family: $sub-font;
+		}
+		.search__submit {
+			.search {
+				width: 100%;
+				height: 257px;
+				position: relative;
+				overflow: hidden;
+				background-color: #fff;
+				box-sizing: border-box;
+				&:after {
+					visibility: hidden;
+					display: block;
+					content: "";
+					clear: both;
+					height: 0;
+				}
+			}
+			search__input {
+				width: 266px;
+				height:38px;
+				border: 1px solid #cdcdcd;
+				border-radius: 3px 3px;
+				box-shadow: 2px 2px 5px 0px rgba(205,205,205,0.53);
+				padding-left: 12px;
+				font-size: 14px;
+				margin-left: 14px;
+				font-family: $sub-font;
+				&:focus {
+					border: 1px solid #ff4e50;
+				}
+			}
+			search__button {
+				@include position2(relative, 10px, 12px);
+				width: 280px;
+				height: 40px;
+				border: 2px solid #ff4e50;
+				color: #ffffff;
+				text-align: center;
+				background:#ff4e50;
+				font-size: 12px;
+				border-radius: 20px 20px;
+				font-weight:600;
+				&:hover {
+					color: $color-footer-txt;
+					background:$color-main-txt;
+					cursor:pointer;
+				}
+			}
+		}
+	}
+}
+/*Footer*/
+footer {
+	.inner {
+		section {
+			.title {
+				@include position(absolute, 18px, 12px);
+				font-size: 17px;
+				font-weight: 600;
+				margin-bottom: 14px;
+				color:$color-footer-txt;
+				font-family: $main-font;
+			}
+			.menu {
+				font-size: 14px;
+				color: #a9a9a9;
+				&__sub-title{
+					font-size: 14px;
+					font-family:$main-font;
+					text-align: center;
+					color: black;
+					margin-left: 12px;
+					margin-bottom: 5px;
+				}
+				&__item li {
+					list-style: none;
+					text-decoration: none;
+					display: inline-block;
+					margin-left: 7px;
+					margin-bottom: 17px;
+					font-family: $sub-font;
+					font-size: 14px;
+					:hover {
+						color:$color-footer-txt;
+						cursor: pointer;
+					}
+				}
+				img {
+					margin-bottom: 20px;
+				}
+			}
+			.rightlogo{
+				font-family: $main-font;
+				font-size: 10px;
+				p{
+					font-weight: 600;
+					margin-bottom: 7px;
+					margin-top: 17px;
+					margin-left: 3px;
+					font-size: 10px;
+					color: #a9a9a9;
+				}
+				img {
+					margin-left: 14px;
+				}
+			}
+		}
+	}
+}
+
+	
+};
+
+@include respond-to(tablet) { 
+/*header*/
+	header {
+		.inner {
+			max-width: 768px;
+			margin: 0 auto;
+			.h__menu{
+				&__logo{
+					@include position(absolute, 49, -12px);
+					float: left;
+					width: 300px;
+				}
+				&__link{
+					@include position(absolute, 49px, 569px);
+					&--block{
+					@include position(absolute, 38px, 627px);
+					}
+				}
+			}
+			.h__txt{
+				@include position(relative, 220px, -70px);
+				text-align: center;
+				h1 {
+					line-height: 54px;
+					font-size: 52px;
+					padding-top: -10px;
+					padding-left: 205px;
+					width: 503px;
+				}
+				p {
+					padding-top: 29px;
+					padding-left: 226px;
+					font-size: 24px;
+					text-align: center;
+					width: 400px;
+				}
+				a {
+					@include position(absolute, 207px, 340px);
+					font-size: 14px;
+					width: 186px;
+					line-height: 13px;
+				}
+			}
+		}
+	}
+/*sliders*/	
+	.sliders{
+		.inner {
+			&__title{
+				@include position2(relative, 96px, 23px);
+				margin-bottom: 33px;
+			}
+			input {
+				width: 50px;
+				height: 70px;
+				margin: 0 auto;
+				background-color:transparent;
+			}
+			&__step{
+				position:relative;
+				margin-bottom: 97px;
+				float: left;
+				width: 30%;
+				margin-left: 20px;
+				z-index:1;
+				&__pic{
+					width:237px;
+					height:402px;
+					&__item--1, &__item--2, &__item--3{
+						display: inline-block;
+						width: 100%;
+						position: absolute;
+						transition: 2s;
+						right: 0;
+						opacity: 1;
+						&--hide {
+							opacity: 0;
+							right: -237px;
+						}
+					}
+					img {
+						width: 236px;
+						height: 402px;
+					}
+				}
+				&__button--1--left, &__button--2--left, &__button--3--left{
+					opacity:0.01;
+				}
+				&__button--1--right, &__button--2--right, &__button--3--right{
+					@include position(absolute, 43px, 180px);
+					z-index:2;
+					cursor:pointer;
+					opacity:0.01;
+				}
+				.image1-left, .image2-left, .image3-left {
+					opacity:1;
+				}
+				.image1-right, .image2-right, .image3-right {
+					opacity:1;
+				}
+				&--1{
+					left: -11px;
+				}
+				&--2{
+					left: 0px;
+				}
+				&--3{
+					left: 11px;
+				}
+				&__txt{
+					@include position(absolute, 10px, 20px);
+					width:201px;
+					height:178px;
+					z-index:2;
+					&--1{
+						@include position(absolute, 113px, 0px);
+					}
+					&--2{
+						@include position(absolute, 159px, 1px);
+					}
+					&--3{
+						@include position(absolute, 113px, 0px);
+					}
+					a {
+						@include position(absolute, 100px, 20px);
+					}
+					h2 {
+						@include position(absolute, 130px, 20px);
+						width: 200px;
+					}
+					p{
+						@include position(absolute, 205px, 20px);
+						width: 201px;
+					}
+					&--2 {
+						p{
+							@include position(absolute, 176px, 18px);
+						}
+					}
+				}
+			}
+		}	
+	}	
+/*partners*/	
+	.partners {
+		.inner {
+			&__title {
+				clear: both;
+				width: 100%;
+				margin-left: 8px;
+				letter-spacing: 0.8px;
+			}
+			&__block {
+				width: 18%;
+				@include position2(relative, 17px, 189px);
+				&__pic {
+					clear: both;
+					position:relative;
+					display: block;
+					img {
+						position:relative;
+					}
+					&__sprite1, &__sprite2,&__sprite3,&__sprite4{
+						@include position2(relative, -41px, 92px);
+					}
+				}
+				&__txt {
+					@include position2(relative, -8px, -31px);
+					p {
+						@include position2(relative, 15px, -2px);
+						margin-bottom: 9px;
+					}
+					&--2 {
+						margin-bottom: 7px;
+					}
+					&--3 {
+						margin-bottom: 66px;
+					}
+				}
+			}
+			&__button {
+				a {
+					padding: 11px 25px 10px 30px;
+					margin-left: 15px;
+				}
+			}
+		}
+	}
+/*Gallery*/	
+.inner {	
+	.gallery {
+		 height: 1126px;
+		&__title{
+			@include position2(relative, 62px, 13px);
+			width: 100%;
+			margin-bottom:25px;
+		}
+		p {
+			@include position2(relative, 33px, 43px);
+			font-size: 20px;
+			margin-bottom: 30px;
+		} 
+		}
+		.grid {
+			width: 944px; 
+			div {
+				float: left;
+				width: 236px;
+				height: 310px;
+				background-position: center;
+				line-height: 310px; 
+			}
+			.grid__fat {
+				width: 492px; 
+			}
+		}
+		
+	}
+	form {
+		&__title{
+			@include position2(relative, 60px, 13px);
+			width: 100%;
+		}
+		p {	
+			margin-top: 36px;
+			margin-bottom:30px;
+		}
+		.search__submit {
+			search__input {
+				width: 223px;
+				height:36px;
+				padding-left: 15px;
+				margin-left: 15px;
+				margin-right:36px;
+			}
+			search__button {
+				width: 160px;
+				height: 40px;
+				margin-left: -30px;
+				margin-bottom:60px;
+			}
+		}
+	}
+}
+/*Footer*/
+footer {
+	.inner {
+		section {
+			float: left;
+			display: inline;
+			margin-right: 88px;	
+			.title {
+				@include position2(relative, 38px, 38px);
+			}
+			.menu {
+				font-size: 14px;
+				color: #a9a9a9;
+				&__sub-title{
+					@include position2(relative, 40px, -3px);
+					&--2 {
+						@include position2(relative, 40px, 16px);
+					}
+				}
+				&__item {
+					@include position2(relative, 14px, -10px);
+					li {
+						display: block;
+						margin-bottom: 10px;
+						text-align:left;
+					}
+					&:last-child {
+						margin-bottom: 30px;
+					}
+				}
+				img {
+					margin-bottom: 20px;
+				}
+			}
+			.rightlogo{
+				@include position2(relative, -38px, 185px);
+				display: block;
+				float: left;
+				p{
+					@include position2(relative, 18px, -14px);
+				}
+				img {
+					@include position2(relative, 4px, -54px);
+				}
+			}
+		}
+	}
+
+	
+};
+
+@include respond-to(desktop) { 
+/*Header*/
+	header {
+		@include wrapper(1440px, 700px);
+			.inner {
+				max-width: 1440px;
+				margin: 0 auto;
+				.h__menu{
+					&__logo{
+						@include position(absolute, 189, 48px);
+					}
+					&__link{
+						@include position(absolute, 49px, 1038px);
+						&--block{
+							@include position(absolute, 37px, 1100px);
+							padding: 10px 18px 8px 14px;
+						}
+					}
+				}
+				.h__txt{
+					h1 {
+						padding-left:534px;
+						width: 500px;
+						line-height: 60px;
+						font-family: $main-font;
+					}
+					p {
+						padding-top:16px;
+						margin-left: 362px;
+					}
+					a {
+						@include position(absolute, 207px, 679px);
+					}
+				}
+			}	
+		}
+/*sliders*/	
+	.sliders{
+		.inner {
+			&__title{
+				@include position2(relative, 98px, 13px);
+			}
+			&__step{
+				margin-bottom: 96px;
+				width: 22%;
+				&--1{
+					@include position(relative, 1px, 254px);
+				}
+				&--2{
+					@include position(relative, 1px, -5px);
+				}
+				&--3{
+					@include position(relative, 1px, -3px);
+				}
+				&__pic{
+					width:300px;
+					height:400px;
+					img {
+						width:300px;
+						height:400px;
+					}
+				}		
+				&__txt{
+					a{
+						@include position(absolute, 102px, 27px);
+					}
+					h2{
+						@include position(absolute, 132px, 25px);
+					}
+					&--1, &--3{
+						top: 129px;
+					}
+				}
+				&__button--1--left, &__button--2--left, &__button--3--left{
+					@include position(absolute, 154px, 29px);
+					opacity:0.01;
+				}
+				&__button--1--right, &__button--2--right, &__button--3--right{
+					@include position(absolute, 154px, 257px);
+				}
+				.image1-left, .image2-left, .image3-left {
+					@include position(absolute, 154px, 29px);
+				}
+				.image1-right, .image2-right, .image3-right {
+					@include position(absolute, 154px, 257px);
+				}	
+			}
+		}
+	}	
+/*partners*/	
+	.partners {
+		.inner {
+			&__title {
+				margin-left: 12px;
+			}
+			&__block {
+				float: left;
+				width: 10%;
+				margin-left: 10px;
+				&__pic {
+					left: 193px;
+					&--2 {
+						margin-left:-27px;
+					}
+					&--3 {
+						margin-left:-57px;
+					}
+					&--4 {
+						margin-left:-88px;
+					}
+					&__sprite1{
+						@include position2(relative, -40px, 182px);
+					}
+					&__sprite2{
+						@include position2(relative, -39px, 193px);
+					}
+					&__sprite3{
+						@include position2(relative, -41px, 209px);
+					}
+					&__sprite4{
+						@include position2(relative, -40px, 225px);
+					}
+				}
+				&__txt {
+					margin-left: 253px;
+					&--2 {
+						margin-left: 231px;
+					}
+					&--3 {
+						margin-left: 222px;
+					}
+					&--3 {
+						margin-left: 208px;
+					}
+				}
+			}
+		}
+	}	
+/*Gallery*/
+.inner {	
+	.gallery {
+		margin-left: 240px;
+		.grid {
+			width: 960px;
+			div {
+				float: left;
+				width: 300px;
+			}
+			.grid__fat {
+				float: left;
+				width: 620px;
+			}
+		p {
+			@include position2(relative, 36px, 42px);
+		}
+		}
+		&__title {
+			@include position2(relative, 27px, -227px);
+		}
+	}
+}
+/*Footer*/
+footer {
+	.inner {
+		.title {
+			@include position2(relative, 36px, 249px);
+		}
+		.menu {
+			&__sub-title {
+				@include position2(relative, 9px, 38px);
+			}
+			&__item {
+				margin-left: 4px;
+			}
+		}
+		.rightlogo {
+			float: right;
+			margin-right: 233px;
+			margin-top:18px;
+		}
+	}
+}
+};
+
+
+
+
+
+

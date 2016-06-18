@@ -1,0 +1,51 @@
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: 320px) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (max-width: 768px) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (max-width: 1440px) { @content; }
+  }
+}
+
+@mixin cf {
+	&:after{
+		visibility: hidden;
+		display: block;
+		content: "";
+		clear: both;
+		height: 0;
+	}
+}
+
+@mixin inner($inner-width){
+	max-width: $inner-width;
+	margin: 0 auto;
+	position: relative;
+}
+
+@mixin position($position, $top, $left){
+	position: $position;
+	top: $top;
+	left: $left; 
+}
+
+@mixin position2($position, $margin-top, $margin-left){
+	position: $position;
+	margin-top: $margin-top;
+	margin-left: $margin-left; 
+}
+
+@mixin wrapper ($wrapper-width, $hbg) {
+	background: url('../img/1.png') center;
+	min-width: $wrapper-width;
+	height: $hbg;
+	position: relative;
+	background-size: cover;
+	font-family: $main-font;
+	color: $color-main-txt;
+}
+	
+	
